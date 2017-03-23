@@ -1,6 +1,6 @@
 /**
  * Class Tuple, to represent tuples of form ⟨key,value⟩, where key 
- * is of type int and value is of type double. 
+ * is of type int and value is of type float. 
  * @author Smriti
  *
  */
