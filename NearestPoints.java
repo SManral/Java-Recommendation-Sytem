@@ -106,7 +106,7 @@ private HashTable hashTable;
 		else{
 			for(int i=0; i<2; i++){
 				for (float nearestPoint: hashTable.search(key, bucketIndex)){
-					if(p-nearestPoint <= 1)
+					if(abs(p-nearestPoint) <= 1)
 						nearestPointsList.add(nearestPoint);
 				}
 				if(bucketIndex<hashTable.size()-1)
@@ -152,5 +152,24 @@ private HashTable hashTable;
 			e.printStackTrace();
 		}
 	}
+	//small test case
+	public static void main (String args[]){
+		ArrayList<Float> a = new ArrayList<Float>();
+		a.add(0.2f);
+		a.add(0.5f);
+		a.add(0.7f);
+		a.add(0.8f);
+		a.add(1.1f);
+		a.add(1.4f);
+		a.add(2.1f);
+		a.add(2.2f);
+		
+		NearestPoints n = new NearestPoints(a);
+		System.out.println(n.naiveNearestPoints(0.2f));
+		System.out.println(n.npHashNearestPoints(0.2f));
+
+		n.allNearestPointsHash();
+	}
 }
+
 
